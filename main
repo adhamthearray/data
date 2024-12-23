@@ -1,0 +1,276 @@
+#include <iostream>
+#include "Graph.h"
+//#include "HashTable.h"
+//#include"linkedList.h"
+#include"string"
+//#include"vector.h"
+using namespace std;
+#include <iostream>
+#include <utility>
+
+//// Overloading `<` for std::pair<int, int>
+//static bool operator<(const pair<string, int>& a, const pair<string, int>& b) {
+//    // Custom comparison logic: Compare second first, then first
+//    if (a.second != b.second) {
+//        cout << "hello second" << endl;
+//        return a.second < b.second;
+//        
+//    }
+//    cout << "hello first" << endl;
+//    return a.first < b.first;
+//}
+
+
+int main()
+{
+    bool app = true;
+    Graph::UserNode* test = new Graph::UserNode(); // Assuming UserNode includes methods login() and signup()
+    Graph::UserNode* u = nullptr;
+    Graph::UserNode user1("Adham", "Walid", "adhamwalid", "password123", false, "123 Cairo St", "123-456-7890");
+    Graph::UserNode user2("Yehya", "AlAbyad", "yehyaalabyad", "mypassword", true, "456 Alexandria St", "987-654-3210");
+    Graph::UserNode user3("Nouran", "Mohamed", "nouranmohamed", "securepass", false, "789 Luxor St", "555-123-4567");
+    Graph::UserNode user4("Reetaj", "Ahmed", "reetajahmed", "password456", true, "101 Giza St", "222-333-4444");
+    Graph::UserNode user5("Mohamed", "Wael", "mohamedwael", "password789", false, "202 Aswan St", "333-444-5555");
+    Graph::UserNode user6("Carol", "Kamal", "carolkamal", "password101", true, "303 Sharm El Sheikh St", "444-555-6666");
+    Graph::UserNode user7("Hassan", "Ismail", "hassanismail", "password112", false, "404 Hurghada St", "555-666-7777");
+    Graph::UserNode user8("Eslam", "Fawzy", "eslamfawzy", "password131", true, "505 Tanta St", "666-777-8888");
+    Graph::UserNode user9("Abdo", "Adel", "abdoadel", "password145", false, "606 Suez St", "777-888-9999");
+    Graph::UserNode user10("Omar", "Ashraf", "omarashraf", "password159", true, "707 Cairo St", "888-999-0000");
+    Graph::UserNode user11("Jana", "Hasheesh", "janahasheesh", "password167", false, "808 Zagazig St", "999-000-1111");
+    Graph::UserNode user12("Toka", "ElSayed", "tokaelsayed", "password178", true, "909 Alexandria St", "000-111-2222");
+    Graph::UserNode user13("Amir", "Tamer", "amirtamer", "password189", false, "1010 Sohag St", "111-222-3333");
+    Graph::UserNode user14("Moaz", "Ahmed", "moazahmed", "password198", true, "1111 Fayoum St", "222-333-4444");
+    Graph::UserNode user15("Mohamed", "Badra", "mohamedbadra", "password201", false, "1212 Ismailia St", "333-444-5555");
+    Graph::UserNode user16("Ahmed", "Salama", "ahmedsalama", "password213", false, "123 Mansoura St", "123-234-3456");
+    Graph::UserNode user17("Ashraf", "Abdelraouf", "ashrafabdelraouf", "mypassword321", true, "456 Cairo St", "234-345-4567");
+    Graph::UserNode user18("Tamer", "Hagras", "tamerhagras", "securepass112", false, "789 Alexandria St", "345-456-5678");
+    Graph::UserNode user19("Tyler", "Durden", "tylerdurden", "password444", true, "101 Giza St", "456-567-6789");
+    Graph::UserNode user20("Arthur", "Morgan", "arthurmorgan", "password555", false, "202 Luxor St", "567-678-7890");
+    Graph::UserNode user21("Nasser", "Eldesouky", "nassereldesouky", "mypassword777", true, "303 Aswan St", "678-789-8901");
+    Graph::UserNode user22("Gaafar", "Elomda", "gaafarelomda", "securepass888", false, "404 Hurghada St", "789-890-9012");
+    Graph::UserNode user23("Omar", "Raeia", "omaraeia", "password999", true, "505 Sharm El Sheikh St", "890-901-0123");
+    Graph::UserNode user24("Tyler", "Durden", "theNarrator", "password000", false, "606 Giza St", "901-012-1234");
+    Graph::UserNode user25("Ryan", "Gosling", "ryangosling", "mypassword202", true, "707 Cairo St", "012-123-2345");
+    Graph::UserNode user26("Hamada", "Helal", "hamadahelal", "securepass333", false, "808 Alexandria St", "123-234-3456");
+    Graph::UserNode user27("Ahmed", "Alsayed", "ahmedalsayed", "password444", true, "909 Luxor St", "234-345-4567");
+    Graph::UserNode user28("Hassan", "Hazem", "hassanhazem", "mypassword555", false, "1010 Aswan St", "345-456-5678");
+    Graph::UserNode user29("Mostafa", "Amr", "mostafaamr", "securepass666", true, "1111 Hurghada St", "456-567-6789");
+    Graph::UserNode user30("Mariam", "Shemis", "mariamshemis", "password777", false, "1212 Sharm El Sheikh St", "567-678-7890");
+    Graph::UserNode user31("Abdelrahman", "Zayed", "abdelrahmanzayed", "mypassword888", true, "1313 Cairo St", "678-789-8901");
+    Graph::UserNode user32("Mariam", "Tarek", "mariamtarek", "securepass999", false, "1414 Alexandria St", "789-890-9012");
+    Graph::UserNode user33("Mariam", "Ibrahim", "mariamibrahim", "password000", true, "1515 Luxor St", "890-901-0123");
+    Graph::UserNode user34("Hossam", "Osama", "hossamosama", "mypassword111", false, "1616 Aswan St", "901-012-1234");
+    Graph::UserNode user35("Omar", "Abouraia", "omarabouraia", "securepass222", true, "1717 Hurghada St", "012-123-2345");
+    Graph::UserNode user36("Aly", "Attia", "alyattia", "password333", false, "1818 Giza St", "123-234-3456");
+    Graph::UserNode user37("Saeed", "Negm", "saeednegm", "mypassword444", true, "1919 Cairo St", "234-345-4567");
+    Graph::UserNode user38("Zeina", "Maged", "zeinamaged", "password123", false, "123 Cairo St", "234-345-4567");
+    Graph::UserNode user39("Sagda", "Mansour", "sagdamansour", "mypassword234", true, "456 Alexandria St", "345-456-5678");
+    Graph::UserNode user40("Jana", "Mohamed", "janamohamed", "securepass345", false, "789 Luxor St", "456-567-6789");
+    Graph::UserNode user41("Jana", "Khaled", "janakhaled", "password456", true, "101 Aswan St", "567-678-7890");
+    Graph::UserNode user42("Rahaf", "Ahmed", "rahafahmed", "mypassword567", false, "202 Hurghada St", "678-789-8901");
+    Graph::UserNode user43("David", "Sameh", "davidsameh", "securepass678", true, "303 Sharm El Sheikh St", "789-890-9012");
+    Graph::UserNode user44("Youssef", "Salem", "youssefsalem", "password789", false, "404 Cairo St", "890-901-0123");
+    Graph::UserNode user45("Ashraf", "Sameh", "ashrafsameh", "mypassword890", true, "505 Alexandria St", "901-012-1234");
+    Graph::UserNode user46("Adham", "Elattar", "adhamelattar", "securepass123", false, "606 Luxor St", "012-123-2345");
+    Graph::UserNode user47("Zein", "Kazem", "zeinkazem", "password234", true, "707 Aswan St", "123-234-3456");
+    Graph::UserNode user48("Aly", "Omar", "alyomar", "mypassword345", false, "808 Hurghada St", "234-345-4567");
+
+
+    //user1.accept(user2);
+   
+    user3.send_request(user1);
+    user1.accept(user3);
+    user3.accept(user9);
+    user2.accept(user4);
+
+    user3.accept(user5);
+
+    user4.accept(user5);
+
+    user6.accept(user5);
+    user6.accept(user9);
+    user6.accept(user8);
+
+    // You can continue linking users in any order, like:
+    user6.accept(user1);
+    user6.accept(user4);
+    user7.accept(user2);
+    user7.accept(user3);
+
+
+
+    while (app)
+    {
+        short choice = 0;
+
+        // Display login/signup menu with basic input validation
+        while (true)
+        {
+            cout << "---------Welcome---------\n";
+            cout << "[1] Login\n[2] Signup\n";
+            cout << "Enter your choice: ";
+
+            cin >> choice;
+
+            // Check if input is valid and within range
+            if (cin.fail() || (choice != 1 && choice != 2)) {
+                cout << "Invalid input! Please enter 1 or 2.\n";
+                cin.clear(); // Clear the input stream
+                cin.ignore(1000, '\n'); // Discard invalid input
+            }
+            else {
+                break; // Valid choice, exit the loop
+            }
+        }
+
+        // Handle login or signup based on choice
+        if (choice == 1)
+        {
+            u = test->login();
+            if (u == nullptr) {
+                cout << "Cannot log in.\n";
+            }
+        }
+        else if (choice == 2)
+        {
+            test->signup();
+            u = test->login();
+            if (u == nullptr) {
+                cout << "Cannot log in.\n";
+            }
+        }
+
+        // Proceed if login/signup successful
+        if (u != nullptr)
+        {
+            Graph::UserNode& user = *u;
+            cout << "Welcome, " << user.first_name << "!\n";
+
+            // Example of modifying user data
+           // user.first_name = "UpdatedName";
+            //cout << "Updated name: " << user.first_name << "\n";
+
+            // User options
+            bool loggedIn = true;
+            while (loggedIn)
+            {
+                Vector<string> heya;
+
+                cout << "[1] View my profile\n[2] View my friends\n[3] Search\n[4] People you may know\n[5] Logout\n[6]Show requests \n[7]Exit \n";
+                short option;
+
+                cout << "Enter your choice: \n";
+                cin >> option;
+
+                // Check for valid input
+                if (cin.fail()) {
+                    cout << "Invalid input! Please enter a number.\n";
+                    cin.clear(); // Clear the input stream
+                    cin.ignore(1000, '\n'); // Discard invalid input
+                    continue;
+                }
+                string usname;
+                Vector<string> v;
+                switch (option)
+                {
+                case 1:
+                    user.view_MY_profile();
+                    break;
+                case 2:
+                    if (user.friends.empty())
+                    {
+                        cout << "List is empty!\n";
+
+                    }
+                    else
+                    {
+                        user.view_friends();
+                        int n;
+
+                        cout << "Enter index of friend<3 \n [-1] Back \n";
+                        cin >> n;
+
+                        if (n == -1)
+                        {
+                            break;
+                        }
+                        else
+                        {
+
+                            Graph::UserNode* anode = user.friends.search_by_index(n);
+                            /*UserNode* userh = anode->OG_NODE;
+                            UserNode& userrr = *(anode->OG_NODE);
+                            UserNode* userp = &user;*/
+
+
+                            short x;
+                            cout << "[1]View profile \n [2]Remove Friend \n [3]Back \n";
+                            cin >> x;
+                            if (x == 1)
+                            {
+
+
+
+                                user.view_profile(*anode);
+
+                                break;
+
+                            }
+                            else if (x == 2)
+                            {
+
+                                user.friends.remove(*anode);
+                                anode->friends.remove(user);
+                            }
+                            else if (x == 3)
+                            {
+                                break;
+                            }
+
+                            else
+                            {
+                                cout << "Invalid\n";
+
+
+                            }
+                        }
+                    }
+                    break;
+                case 3:
+                    cout << "Enter name of the username: ";
+                    cin >> usname;
+                    user.searchByUsername(usname);
+                    break;
+                case 4:
+                   
+                     user.people_you_may_know();
+                     cout << "888";
+                     
+                    
+                    break;
+                case 5:
+                    cout << "Logging out...\n";
+                    loggedIn = false;
+                    break;
+                case 6:
+                    user.show_requests();
+                    break;
+                case 7:
+                    return 0;
+                    break;
+              
+                default:
+                    cout << "Invalid choice. Please try again.\n";
+                    break;
+                }
+            }
+        }
+
+
+
+        // Clean up dynamically allocated memory
+
+    }
+    delete test;
+   
+}
